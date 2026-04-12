@@ -8,7 +8,7 @@ API sederhana untuk manajemen perpustakaan Lab RPL, dengan:
 - peminjaman + request return + konfirmasi return admin
 - CRUD tag + search/filter buku
 
-## Stack dan justifikasi
+## Stack
 
 - **FastAPI**: dedicated, docs otomatis (`/docs`, `/redoc`). Atatu di /docs untuk hoppscotch docs.
 - **SQLAlchemy ORM**: model dan query.
@@ -17,7 +17,7 @@ API sederhana untuk manajemen perpustakaan Lab RPL, dengan:
 - **JWT + bcrypt**: autentikasi stateless dengan password hash aman.
 - **uv**: dependency/project runner yang ringan dan cepat.
 
-## Struktur project (ringkas)
+## Struktur project
 
 ```text
 app/
@@ -55,7 +55,7 @@ main.py             # entrypoint app
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
-## Hoppscotch import files
+## Hoppscotch 
 
 - Collection: `docs/rplibrary-hoppscotch-collection.json`
 - Environment: `docs/rplibrary-hoppscotch-environment.json`
