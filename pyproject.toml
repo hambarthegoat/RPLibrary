@@ -1,0 +1,18 @@
+[project]
+name = "rplibrary"
+version = "0.1.0"
+description = "Simple RPLibrary API with auth, role-based access, and borrowing flow"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.16.5",
+    "bcrypt>=5.0.0",
+    "fastapi>=0.135.3",
+    "psycopg[binary]>=3.2.9",
+    "pydantic[email]>=2.11.7",
+    "pyjwt>=2.10.1",
+    "python-dotenv>=1.1.1",
+    "python-multipart>=0.0.20",
+    "sqlalchemy>=2.0.43",
+    "uvicorn[standard]>=0.44.0",
+]

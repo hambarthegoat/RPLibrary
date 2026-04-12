@@ -1,0 +1,43 @@
+{
+  "v": 2,
+  "id": "rplibrary-local-env",
+  "name": "RPLibrary Local",
+  "variables": [
+    {
+      "key": "baseUrl",
+      "initialValue": "http://127.0.0.1:8000",
+      "currentValue": "http://127.0.0.1:8000",
+      "secret": false
+    },
+    {
+      "key": "token",
+      "initialValue": "",
+      "currentValue": "",
+      "secret": true
+    },
+    {
+      "key": "userId",
+      "initialValue": "1",
+      "currentValue": "1",
+      "secret": false
+    },
+    {
+      "key": "tagId",
+      "initialValue": "1",
+      "currentValue": "1",
+      "secret": false
+    },
+    {
+      "key": "bookId",
+      "initialValue": "1",
+      "currentValue": "1",
+      "secret": false
+    },
+    {
+      "key": "borrowingId",
+      "initialValue": "1",
+      "currentValue": "1",
+      "secret": false
+    }
+  ]
+}

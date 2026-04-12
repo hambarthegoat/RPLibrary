@@ -1,0 +1,428 @@
+{
+  "v": 3,
+  "name": "RPLibrary API",
+  "folders": [
+    {
+      "v": 3,
+      "name": "General",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Root",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Auth",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Register",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Admin RPL\",\n  \"email\": \"admin@kampus.ac.id\",\n  \"password\": \"password123\"\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Login",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/login",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"email\": \"admin@kampus.ac.id\",\n  \"password\": \"password123\"\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Users",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Get Me",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/users/me",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Upload Avatar",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/users/me/avatar",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "multipart/form-data",
+            "body": [
+              { "key": "avatar", "value": [{}], "active": true, "isFile": true }
+            ]
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Get User Avatar",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/users/<<userId>>/avatar",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Tags",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Create Tag (Admin)",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/tags",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Backend\"\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "List Tags",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/tags",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Update Tag (Admin)",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/tags/<<tagId>>",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Database\"\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Delete Tag (Admin)",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/tags/<<tagId>>",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Books",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Create Book (Admin)",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/books",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "multipart/form-data",
+            "body": [
+              { "key": "title", "value": "Clean Architecture", "active": true, "isFile": false },
+              { "key": "author", "value": "Robert C. Martin", "active": true, "isFile": false },
+              { "key": "description", "value": "Buku software architecture", "active": true, "isFile": false },
+              { "key": "stock_total", "value": "5", "active": true, "isFile": false },
+              { "key": "tag_names", "value": "Backend,Architecture", "active": true, "isFile": false },
+              { "key": "cover", "value": [{}], "active": true, "isFile": true }
+            ]
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "List Books (with filters)",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/books",
+          "params": [
+            { "key": "q", "value": "clean", "active": true },
+            { "key": "tag", "value": "Backend", "active": true },
+            { "key": "available_only", "value": "true", "active": true }
+          ],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Get Book By ID",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Update Book (Admin)",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"title\": \"Clean Architecture (Updated)\",\n  \"author\": \"Robert C. Martin\",\n  \"description\": \"Updated description\",\n  \"stock_total\": 7,\n  \"tag_names\": [\"Backend\", \"Design\"]\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Upload Book Cover (Admin)",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>/cover",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "multipart/form-data",
+            "body": [
+              { "key": "cover", "value": [{}], "active": true, "isFile": true }
+            ]
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Get Book Cover",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>/cover",
+          "params": [],
+          "headers": [],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Delete Book (Admin)",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Borrowings",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "Borrow Book",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/books/<<bookId>>/borrow",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"days\": 7\n}"
+          },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "List My Borrowings",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/borrowings/me",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Request Return",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/borrowings/<<borrowingId>>/return-request",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    },
+    {
+      "v": 3,
+      "name": "Admin Borrowings",
+      "folders": [],
+      "requests": [
+        {
+          "v": "7",
+          "name": "List Return Requests (Admin)",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/admin/borrowings/return-requests",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        },
+        {
+          "v": "7",
+          "name": "Confirm Return (Admin)",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/admin/borrowings/<<borrowingId>>/confirm-return",
+          "params": [],
+          "headers": [
+            { "key": "Authorization", "value": "Bearer <<token>>", "active": true }
+          ],
+          "auth": { "authType": "inherit", "authActive": true },
+          "body": { "contentType": null, "body": null },
+          "preRequestScript": "",
+          "testScript": "",
+          "requestVariables": []
+        }
+      ],
+      "auth": { "authType": "inherit", "authActive": true },
+      "headers": []
+    }
+  ],
+  "requests": [],
+  "auth": { "authType": "none", "authActive": true },
+  "headers": []
+}
