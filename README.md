@@ -50,12 +50,5 @@ main.py             # entrypoint app
    uv run uvicorn main:app --reload
    ```
 
-## API docs
-
-- Swagger UI: `http://127.0.0.1:8000/docs`
-- ReDoc: `http://127.0.0.1:8000/redoc`
-
 ## Hoppscotch 
-
-- Collection: `docs/rplibrary-hoppscotch-collection.json`
-- Environment: `docs/rplibrary-hoppscotch-environment.json`
+- `its.id/m/RPLibrary`  
