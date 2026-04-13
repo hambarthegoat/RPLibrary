@@ -11,7 +11,6 @@ from app.infrastructure.models import User
 
 bearer_scheme = HTTPBearer(auto_error=False)
 
-
 def get_current_user(
     credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer_scheme)],
     db: Annotated[Session, Depends(get_db)],
@@ -36,7 +35,6 @@ def get_current_user(
     if user is None:
         raise credentials_error
     return user
-
 
 def require_admin(current_user: Annotated[User, Depends(get_current_user)]) -> User:
     if current_user.role != "admin":

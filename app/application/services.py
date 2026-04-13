@@ -9,7 +9,6 @@ from app.core.config import settings
 from app.core.security import hash_password, verify_password
 from app.infrastructure.models import Book, BorrowTransaction, Tag, User
 
-
 def _extract_image(upload_file: UploadFile) -> tuple[bytes, str]:
     content_type = upload_file.content_type
     if not content_type or not content_type.startswith("image/"):
@@ -19,7 +18,6 @@ def _extract_image(upload_file: UploadFile) -> tuple[bytes, str]:
         raise HTTPException(status_code=400, detail="File gambar kosong")
     return content, content_type
 
-
 def user_to_response(user: User) -> UserResponse:
     return UserResponse(
         id=user.id,
@@ -28,7 +26,6 @@ def user_to_response(user: User) -> UserResponse:
         role=user.role,
         avatar_url=f"/users/{user.id}/avatar" if user.avatar_image else None,
     )
-
 
 def register_user(db: Session, name: str, email: str, password: str) -> User:
     existing = db.scalar(select(User).where(User.email == email))
@@ -46,13 +43,11 @@ def register_user(db: Session, name: str, email: str, password: str) -> User:
     db.refresh(user)
     return user
 
-
 def authenticate_user(db: Session, email: str, password: str) -> User:
     user = db.scalar(select(User).where(User.email == email))
     if not user or not verify_password(password, user.password_hash):
         raise HTTPException(status_code=401, detail="Email / password salah")
     return user
-
 
 def upload_user_avatar(db: Session, current_user: User, upload_file: UploadFile) -> User:
     image, content_type = _extract_image(upload_file)
@@ -62,7 +57,6 @@ def upload_user_avatar(db: Session, current_user: User, upload_file: UploadFile)
     db.commit()
     db.refresh(current_user)
     return current_user
-
 
 def parse_or_create_tags(db: Session, tag_csv: str | None) -> list[Tag]:
     if not tag_csv:
@@ -89,7 +83,6 @@ def parse_or_create_tags(db: Session, tag_csv: str | None) -> list[Tag]:
         db.flush()
         result.append(tag)
     return result
-
 
 def book_to_response(book: Book) -> BookResponse:
     return BookResponse(
