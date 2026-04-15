@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 import bcrypt
 import jwt
 
-from app.core.config import settings
+from app.infrastructure.config import settings
 
 def hash_password(password: str) -> str:
     password_bytes = password.encode("utf-8")

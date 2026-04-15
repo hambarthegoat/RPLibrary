@@ -4,12 +4,12 @@
   "folders": [
     {
       "v": 3,
-      "name": "General",
+      "name": "Root",
       "folders": [],
       "requests": [
         {
           "v": "7",
-          "name": "Root",
+          "name": "Checkhealth",
           "method": "GET",
           "endpoint": "<<baseUrl>>/",
           "params": [],
@@ -98,7 +98,7 @@
           "body": {
             "contentType": "multipart/form-data",
             "body": [
-              { "key": "avatar", "value": [{}], "active": true, "isFile": true }
+              { "key": "avatar", "value": [null], "active": true, "isFile": true }
             ]
           },
           "preRequestScript": "",
@@ -218,7 +218,7 @@
               { "key": "description", "value": "Buku software architecture", "active": true, "isFile": false },
               { "key": "stock_total", "value": "5", "active": true, "isFile": false },
               { "key": "tag_names", "value": "Backend,Architecture", "active": true, "isFile": false },
-              { "key": "cover", "value": [{}], "active": true, "isFile": true }
+              { "key": "cover", "value": [null], "active": true, "isFile": true }
             ]
           },
           "preRequestScript": "",
@@ -286,7 +286,7 @@
           "body": {
             "contentType": "multipart/form-data",
             "body": [
-              { "key": "cover", "value": [{}], "active": true, "isFile": true }
+              { "key": "cover", "value": [null], "active": true, "isFile": true }
             ]
           },
           "preRequestScript": "",

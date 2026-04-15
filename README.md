@@ -21,12 +21,13 @@ API sederhana untuk manajemen perpustakaan Lab RPL, dengan:
 
 ```text
 app/
-  core/             # config, security
-  infrastructure/   # engine/session + SQLAlchemy models
+  core/             # entities + repository interfaces
+  infrastructure/   # config + engine/session + SQLAlchemy models + repositories
   application/      # schemas + business services
   presentation/     # FastAPI routes + auth dependencies
 alembic/
   versions/         # migration scripts
+security.py         # JWT + bcrypt helpers
 main.py             # entrypoint app
 ```
 
@@ -51,4 +52,4 @@ main.py             # entrypoint app
    ```
 
 ## Hoppscotch 
-- `its.id/m/RPLibrary`  
+- `https://api-docs.hoppscotch.io/view/f0367f24-3e51-4638-b3a0-2a8dc573617b/CURRENT`  
