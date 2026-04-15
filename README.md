@@ -52,4 +52,4 @@ main.py             # entrypoint app
    ```
 
 ## Hoppscotch 
-- `https://api-docs.hoppscotch.io/view/f0367f24-3e51-4638-b3a0-2a8dc573617b/CURRENT`  
+ `https://api-docs.hoppscotch.io/view/f0367f24-3e51-4638-b3a0-2a8dc573617b/CURRENT`  
